@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Score")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ScoreController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class ScoreController {
         return scoreService.getAll();
     }
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Score save(@RequestBody Score p){ return scoreService.save(p);}
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

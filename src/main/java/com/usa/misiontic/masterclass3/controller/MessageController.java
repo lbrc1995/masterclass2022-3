@@ -19,6 +19,7 @@ public class MessageController {
     @GetMapping("/all")
     public List <Message> getAll(){return messageService.getAll();}
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p){ return messageService.save(p);}
 
     @DeleteMapping("/{id}")

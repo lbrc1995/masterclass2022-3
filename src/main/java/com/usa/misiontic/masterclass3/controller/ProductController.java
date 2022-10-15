@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Product")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ProductController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class ProductController {
         return productService.getAll();
     }
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Product save(@RequestBody Product p){
         return productService.save(p);
     }

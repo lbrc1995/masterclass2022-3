@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Machine")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class MachineController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class MachineController {
         return machineService.getAll();
     }
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Machine save(@RequestBody Machine m){
         return machineService.save(m);
     }
