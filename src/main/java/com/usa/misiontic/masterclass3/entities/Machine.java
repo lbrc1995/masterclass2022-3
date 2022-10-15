@@ -13,6 +13,7 @@ public class Machine implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(name="years")
     private Integer year;
     private String brand;
     private String description;

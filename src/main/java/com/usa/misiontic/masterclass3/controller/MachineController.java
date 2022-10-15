@@ -3,6 +3,7 @@ package com.usa.misiontic.masterclass3.controller;
 import com.usa.misiontic.masterclass3.entities.Machine;
 import com.usa.misiontic.masterclass3.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,4 +23,8 @@ public class MachineController {
     public Machine save(@RequestBody Machine m){
         return machineService.save(m);
     }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return machineService.delete(id);}
 }

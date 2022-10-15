@@ -3,6 +3,7 @@ package com.usa.misiontic.masterclass3.controller;
 import com.usa.misiontic.masterclass3.entities.Reservation;
 import com.usa.misiontic.masterclass3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,4 +23,8 @@ public class ReservationController {
     public Reservation save(@RequestBody Reservation c){
         return reservationService.save(c);
     }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return reservationService.delete(id);}
 }

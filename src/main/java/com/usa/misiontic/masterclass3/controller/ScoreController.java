@@ -3,6 +3,7 @@ package com.usa.misiontic.masterclass3.controller;
 import com.usa.misiontic.masterclass3.entities.Score;
 import com.usa.misiontic.masterclass3.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class ScoreController {
         return scoreService.getAll();
     }
     @PostMapping("/save")
-    public Score save(@RequestBody Score p){ return scoreService.save(p);
-    }
+    public Score save(@RequestBody Score p){ return scoreService.save(p);}
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return scoreService.delete(id);}
 }
