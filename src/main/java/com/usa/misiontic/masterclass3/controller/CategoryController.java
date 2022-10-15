@@ -18,6 +18,7 @@ public class CategoryController {
     public List<Category> getAll(){
         return categoryService.getAll();
     }
+    
     @PostMapping("/save")
     public Category save(@RequestBody Category p){
         return categoryService.save(p);
