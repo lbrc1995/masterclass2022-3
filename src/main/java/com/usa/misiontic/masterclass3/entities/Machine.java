@@ -13,9 +13,9 @@ public class Machine implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String brand;
     @Column(name="years")
     private Integer year;
-    private String brand;
     private String description;
 
     @ManyToOne
