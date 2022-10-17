@@ -1,5 +1,6 @@
 package com.usa.misiontic.masterclass3.service;
 
+import com.usa.misiontic.masterclass3.entities.Machine;
 import com.usa.misiontic.masterclass3.entities.Message;
 import com.usa.misiontic.masterclass3.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class MessageService {
     private MessageRepository messageRepository;
 
     public List<Message> getAll(){
-        return (List<Message>) messageRepository.getAll();
+        return messageRepository.getAll();
     }
     public Optional <Message> getMessage(int id){
         return messageRepository.getMessage(id);

@@ -1,6 +1,5 @@
 package com.usa.misiontic.masterclass3.service;
 
-import com.usa.misiontic.masterclass3.entities.Category;
 import com.usa.misiontic.masterclass3.entities.Machine;
 import com.usa.misiontic.masterclass3.repository.MachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
