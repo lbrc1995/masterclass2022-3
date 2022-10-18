@@ -1,5 +1,6 @@
 package com.usa.misiontic.masterclass3.controller;
 
+import com.usa.misiontic.masterclass3.entities.Client;
 import com.usa.misiontic.masterclass3.entities.Message;
 import com.usa.misiontic.masterclass3.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class MessageController {
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p){ return messageService.save(p);}
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody Message p) { return messageService.update(p);}
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

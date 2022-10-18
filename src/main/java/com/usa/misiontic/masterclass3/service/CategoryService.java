@@ -39,15 +39,13 @@ public class CategoryService {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
-
-                categoryRepository.save(q.get());
-                return q.get();
-            }else{
-                return p;
+                if (p.getDescription() !=null){
+                    q.get().setDescription(p.getDescription());
+                }
+                return categoryRepository.save(q.get());
             }
-        }else{
-            return p;
         }
+        return p;
     }
     public boolean delete(int id){
         boolean flag=false;

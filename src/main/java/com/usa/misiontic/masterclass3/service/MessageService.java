@@ -40,9 +40,7 @@ public class MessageService {
                 if (p.getMessageText() != null) {
                     q.get().setMessageText(p.getMessageText());
                 }
-
-                messageRepository.save(q.get());
-                return q.get();
+                return messageRepository.save(q.get());
             }
         }
         return p;

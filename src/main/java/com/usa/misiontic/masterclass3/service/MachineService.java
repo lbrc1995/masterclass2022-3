@@ -36,27 +36,24 @@ public class MachineService {
         if(m.getId()!=null){
             Optional<Machine> q = machineRepository.getMachine(m.getId());
             if(q.isPresent()) {
-                if(m.getName()!=null){
+                if (m.getName() != null) {
                     q.get().setName(m.getName());
                 }
-                if(m.getBrand()!=null){
+                if (m.getBrand() != null) {
                     q.get().setBrand(m.getBrand());
                 }
-                if(m.getDescription()!=null){
+                if (m.getYear() != null) {
+                    q.get().setYear(m.getYear());
+                }
+                if (m.getDescription() != null) {
                     q.get().setDescription(m.getDescription());
                 }
-                if(m.getCategory()!=null){
-                    q.get().setCategory(m.getCategory());
+                return machineRepository.save(q.get());
                 }
-                machineRepository.save(q.get());
-                return q.get();
-            }else{
-                return m;
             }
-        }else{
             return m;
         }
-    }
+
     public boolean delete(int id){
         boolean flag=false;
         Optional<Machine>p= machineRepository.getMachine(id);
